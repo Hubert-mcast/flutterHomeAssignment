@@ -15,8 +15,10 @@ class _WeatherPageState extends State<WeatherPage> {
 
   _fetchWeather() async{
     String cityName = await _weatherService.getCurrentCity();
+    String country = await _weatherService.getCurrentCountry();
+
     try{
-      final weather = await _weatherService.getWeather(cityName);
+      final weather = await _weatherService.getWeather(cityName, country);
       setState(() {
         _weather = weather;
       });
@@ -40,8 +42,10 @@ class _WeatherPageState extends State<WeatherPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
           Text(_weather?.cityName??'Loading...'),
-        
+
           Text('${_weather?.temperature.round()}°C'),
+
+          Text(_weather?.mainCondition??''),
         ]),
       )
     );
