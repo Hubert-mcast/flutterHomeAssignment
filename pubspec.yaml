@@ -9,6 +9,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  geocoding: ^4.0.0
+  geolocator: ^14.0.2
+  http: ^1.6.0
 
 dev_dependencies:
   flutter_test:
