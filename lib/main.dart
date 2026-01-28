@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:home_assignment/weather_page.dart';
+import 'package:home_assignment/pages/weather_page.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-void main() {
+void main() async {
+  await Hive.initFlutter();
+  var box = await Hive.openBox('SavedLocations');
+
   runApp(const MainApp());
 }
 
