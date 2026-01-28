@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 class WeatherCard extends StatelessWidget {
   final String city;
@@ -16,6 +17,7 @@ class WeatherCard extends StatelessWidget {
         color: Colors.amber[200],
         child: Row(
           children: [
+            Padding(padding: EdgeInsets.all(10)),
             Text(city),
             Text(temperature),
             Text(mainCondition),

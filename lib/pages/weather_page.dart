@@ -46,7 +46,10 @@ class _WeatherPageState extends State<WeatherPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Padding(padding: EdgeInsets.all(50)),
+
           Text(_weather?.cityName??'Loading...'),
           Text('${_weather?.temperature.round()}°C'),
           Text(_weather?.mainCondition??''),
@@ -57,7 +60,7 @@ class _WeatherPageState extends State<WeatherPage> {
               itemBuilder: (context, index) {
                 Map location = _savedLocations.getAt(index);
                 _fetchWeather(location['city'], location['country']);
-                return WeatherCard(city: location['city'], temperature: '${_weather?.temperature.round()}°C', mainCondition: _weather?.mainCondition??'',);
+                return WeatherCard(city: location['city'], temperature: '${_weather?.temperature.round()}°C', mainCondition: _weather?.mainCondition??'',);                
               }
             ),
           ),

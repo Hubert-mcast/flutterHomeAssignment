@@ -32,12 +32,24 @@ class _EditLocationsState extends State<EditLocations>{
     return Scaffold(
       body: Column(
         children: [
+          Padding(padding: EdgeInsets.all(50)),
           TextField(controller: _city,decoration: InputDecoration(border: OutlineInputBorder(), hintText: 'Enter city name'),),
           TextField(controller: _country,decoration: InputDecoration(border: OutlineInputBorder(), hintText: 'Enter country code ex MT'),),
           MaterialButton(
-            onPressed: writeData,
+            onPressed: (){ 
+              writeData();
+              Navigator.pop(context);
+            },
             child: Text('Save'),
             color: Colors.blue,
+          ),
+          MaterialButton(onPressed: (){
+            final box = Hive.box('SavedLocations');
+            box.clear();
+            Navigator.pop(context);
+          }, 
+          child: Text('Clear All'),
+          color: Colors.red,
           )
         ],
       )
