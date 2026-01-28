@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "568967656217",
+    "project_id": "flutter-homeassignment",
+    "storage_bucket": "flutter-homeassignment.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:568967656217:android:5e1c49af42353306cfcb88",
+        "android_client_info": {
+          "package_name": "com.example.home_assignment"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqYC3sb95kTn3PjzCqX3hGjHwZjBvbq1c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

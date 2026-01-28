@@ -68,6 +68,8 @@ class _WeatherPageState extends State<WeatherPage> {
           ElevatedButton(onPressed: () {
             Navigator.push(context, MaterialPageRoute(builder: (context) => EditLocations()),);
           }, child: Text('Edit Locations')),
+
+          Padding(padding: EdgeInsets.all(50)),
         ],
       ),
     );

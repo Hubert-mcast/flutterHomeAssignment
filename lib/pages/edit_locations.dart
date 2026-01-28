@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:home_assignment/service/notification_service.dart';
 
 class EditLocations extends StatefulWidget {
   const EditLocations({super.key});
@@ -35,17 +36,20 @@ class _EditLocationsState extends State<EditLocations>{
           Padding(padding: EdgeInsets.all(50)),
           TextField(controller: _city,decoration: InputDecoration(border: OutlineInputBorder(), hintText: 'Enter city name'),),
           TextField(controller: _country,decoration: InputDecoration(border: OutlineInputBorder(), hintText: 'Enter country code ex MT'),),
-          MaterialButton(
+          MaterialButton( //save button
             onPressed: (){ 
               writeData();
+              NotificationService().showNotification(title: 'Saved location', body: _city.text);
               Navigator.pop(context);
             },
             child: Text('Save'),
             color: Colors.blue,
           ),
-          MaterialButton(onPressed: (){
+          MaterialButton( //delete button
+            onPressed: (){
             final box = Hive.box('SavedLocations');
             box.clear();
+            NotificationService().showNotification(title: 'Deleted locations', body: 'deleted all locations');
             Navigator.pop(context);
           }, 
           child: Text('Clear All'),

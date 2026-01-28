@@ -3,6 +3,7 @@ import 'package:home_assignment/pages/weather_page.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
+import 'package:home_assignment/service/notification_service.dart';
 
 void main() async {
   await Hive.initFlutter();
@@ -11,6 +12,9 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  WidgetsFlutterBinding.ensureInitialized();
+  NotificationService().initNotification();
 
   runApp(const MainApp());
 }
